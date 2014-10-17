@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-if node['virtualization']['system'] = 'lxc' && !node['swap_file']['run_on_lxc']
+if node['virtualization']['system'] == 'lxc' && !node['swap_file']['run_on_lxc']
   Chef::Log.warn("Using LXC virtualization and node['swap_file']['run_on_lxc'] = false, then skiping create swap files")
   return
 end
