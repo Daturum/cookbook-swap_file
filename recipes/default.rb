@@ -18,7 +18,8 @@ directory node['swap_file']['directory'] do
 end
 
 (1..node['swap_file']['count'].to_i).each do |index|
-  swap_file "#{node['swap_file']['directory']}/swap#{index}" do
+  swap_file "#{node['swap_file']['directory']}/file#{index}" do
     size node['swap_file']['size'].to_i
+    persist node['swap_file']['persist']
   end
 end
